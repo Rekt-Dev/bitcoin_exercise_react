@@ -1,22 +1,20 @@
 import "./styles.css";
+import {useState} from "react"
 
 export default function App() {
   
-  const 
+  const [price,setPrice]=useState(0)
   
   async function checkBtcPrice() {
     
     const response = await fetch(
-      `  https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false
-`
-    );
-    setJsonData(await response.json());
+`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false
+`);
+    setPrice(await response.json());
     console.log(jsonData);
   }
-  const checkBtcPrice()=>{
     
-  }
-  let price=20000
+  
   
   return (
     <div className="App">
