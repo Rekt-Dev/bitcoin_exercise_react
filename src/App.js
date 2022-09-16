@@ -6,12 +6,11 @@ export default function App() {
   const [price,setPrice]=useState(0)
   
   async function checkBtcPrice() {
-    
     const response = await fetch(
-`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false
+`https://api.coingecko.com/api/v3/simple/price?no-cors&ids=bitcoin&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false
 `);
     setPrice(await response.json());
-    console.log(jsonData);
+    console.log(price.bitcoin);
   }
     
   
@@ -19,8 +18,8 @@ export default function App() {
   return (
     <div className="App">
       <h1>Bitcoins Price</h1>
-      <button onClick={()=>{checkBtcPrice}}>Check BTC's Price</button>
-      <h2>The price of BTC is {price}</h2>
+      <button onClick={checkBtcPrice}>Check BTC's Price</button>
+      <h2>The price of BTC is {price.bitcoin}</h2>
     </div>
   );
 }
