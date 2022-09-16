@@ -20,7 +20,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>Bitcoins Price</h1>
-      <button onClick={fakePrice}>Check BTC's Price</button>
+      <button onClick={checkBtcPrice}>Check BTC's Price</button>
       <h2>The price of BTC is {price}</h2>
     </div>
   );
